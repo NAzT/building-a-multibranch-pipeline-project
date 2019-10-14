@@ -12,6 +12,14 @@ pipeline {
 
     tools { nodejs "node-v12" }
     stages {
+        environment {
+           JENKINS_PATH = sh(script: 'pwd', , returnStdout: true).trim()
+        }
+        steps {
+           echo "Hello world"
+           echo "PATH=${JENKINS_PATH}"
+           sh 'echo "JP=$JENKINS_PATH"'
+        }        
         stage('Build') {
             steps {
                 sh 'npm install'
