@@ -20,8 +20,6 @@ pipeline {
                echo "Hello world"
                echo "PATH=${JENKINS_PATH}"
                sh 'echo "JP=$JENKINS_PATH"'
-            }        
-            steps {
                 sh 'npm install'
             }
         }
