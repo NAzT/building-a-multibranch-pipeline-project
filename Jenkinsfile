@@ -6,6 +6,11 @@ pipeline {
             args '-p 3001:3000 -p 5000:5000'
         }
     }
+    environment {
+        CI = 'true'
+    }
+
+    tools { nodejs "node-v12" }
     stages {
         stage('Build') {
             steps {
